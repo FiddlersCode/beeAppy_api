@@ -46,6 +46,6 @@ class BeesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def bee_params
-      params.require(:bee).permit(:location)
+      params.require(:bee).permit(:latitude, :longitude)
     end
 end
