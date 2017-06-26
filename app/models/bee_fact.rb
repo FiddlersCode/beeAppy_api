@@ -1,0 +1,2 @@
+class BeeFact < ApplicationRecord
+end
