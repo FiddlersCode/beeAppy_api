@@ -4,8 +4,9 @@ class BeeFactsController < ApplicationController
   # GET /bee_facts
   def index
     @bee_facts = BeeFact.all
+    @bee_fact = @bee_facts.sample
 
-    render json: @bee_facts
+    render json: @bee_fact
   end
 
   # GET /bee_facts/1
@@ -40,8 +41,8 @@ class BeeFactsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_bee
-      @bee_facts = Bee.find(params[:id])
+    def set_bee_fact
+      @bee_facts = BeeFact.find(params[:id]).fact
     end
 
     # Only allow a trusted parameter "white list" through.
